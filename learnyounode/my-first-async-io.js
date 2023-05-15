@@ -1,11 +1,11 @@
 const fs = require('fs') ;
-let filePath=process.argv[1];
+let filePath=process.argv[2];
 fs.readFile(filePath,(error,data)=>{
     if(error){
         console.log(error);
     }
     else{
-        let str= data.toString().split("\n").length;
+        let str= data.toString().split("\n").length-1;
         console.log(str);
     };
 });
