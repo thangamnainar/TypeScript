@@ -62,7 +62,7 @@ let p={
     x:2,
     y:4
 };
-console.log(object(p));
+// console.log(object(p));
 
 interface point{
     x:number;
@@ -75,7 +75,7 @@ let interfacevale:point={
     x:20,
     y:20,
 };
-console.log(object2(interfacevale));
+// console.log(object2(interfacevale));
 
 
 function calculator(num1: number, num2: number, operator: string): number | string {
@@ -97,9 +97,147 @@ function calculator(num1: number, num2: number, operator: string): number | stri
   }
   
   // Usage examples:
-  console.log(calculator(5, 3, '+')); // Output: 8
-  console.log(calculator(10, 2, '-')); // Output: 8
-  console.log(calculator(4, 2, '*')); // Output: 8
-  console.log(calculator(10, 0, '/')); // Output: Error: Division by zero
-  console.log(calculator(5, 3, '%')); // Output: Error: Invalid operator
+  // console.log(calculator(5, 3, '+')); // Output: 8
+  // console.log(calculator(10, 2, '-')); // Output: 8
+  // console.log(calculator(4, 2, '*')); // Output: 8
+  // console.log(calculator(10, 0, '/')); // Output: Error: Division by zero
+  // console.log(calculator(5, 3, '%')); // Output: Error: Invalid operator
   
+// 16/05/2023
+
+  class Greeter {
+    greeting:string;
+    constructor (message:string){
+      this.greeting=message;
+    }
+    greet (){
+      return "hello ,"+this.greeting;
+    }
+  }
+
+ let gree=new Greeter('thangam');
+//  console.log(gree.greet());
+ 
+
+class car{
+  engine:string;
+  constructor(engine:string){
+    this.engine=engine;
+  }
+}
+let obje=new car('benz');
+// console.log(obje.engine);
+
+class car2{
+  constructor(public engine:string){};
+}
+let ca2=new car2('audi');
+// console.log(ca2);
+
+
+class car3{
+  engine:string;
+
+  constructor(engine:string){
+    this.engine=engine;
+  }
+
+  start(){
+    return "started "+ this.engine
+  }
+
+  stop(){
+    return "stopped "+this.engine
+  }
+
+}
+// let ca3=new car3('audi');
+// console.log(ca3.start());
+// console.log(ca3.stop());
+
+
+class car4{
+  private _engine:string;
+  engine1:string;
+
+  constructor(engine:string){
+  // this._engine='iuytre'
+    this.engine=engine;
+    // console.log(this.engine);
+    
+  }
+
+  get engine():string{
+    console.log('inside get');
+    return this._engine;
+  }
+
+
+  set engine(value:string){
+    console.log('inside set');
+    // if (value == undefined) throw 'supply an engine!';
+    this._engine = value;
+  }
+
+};
+
+
+
+let ca4=new car4('jhklkj');
+console.log(ca4.engine);
+// ca4.engine='aaudi';
+
+//...........
+
+class Engine{
+  constructor(public power:number,public type:string){
+  }
+}
+
+class Auto{
+  engine:Engine;
+  constructor(engine){
+    this.engine=engine;
+  }
+}
+
+class Truck extends Auto{
+  fourByFour:boolean;
+  constructor(engine:Engine,fourByFour:boolean){
+    super(engine);
+
+    this.fourByFour=fourByFour;
+  }
+}
+
+
+// let engine = new Engine(300,"ES6");
+// let truk=new Truck(engine,true);
+// console.log(truk.engine.power);
+
+
+// define interface..
+
+interface action{
+  start(message:string);
+  stop(message:string);
+}
+
+class ccar implements action{
+  constructor(public engine:string){
+    this.engine=engine;
+  }
+
+  start(message: string) {
+    console.log(this.engine + message);
+    
+  }
+
+  stop(message: string) {
+    console.log(this.engine + message);
+    
+  }
+}
+
+var ob=new ccar('benz');
+// ob.start('started')
