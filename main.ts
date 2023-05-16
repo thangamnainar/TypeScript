@@ -76,3 +76,30 @@ let interfacevale:point={
     y:20,
 };
 console.log(object2(interfacevale));
+
+
+function calculator(num1: number, num2: number, operator: string): number | string {
+    switch (operator) {
+      case '+':
+        return num1 + num2;
+      case '-':
+        return num1 - num2;
+      case '*':
+        return num1 * num2;
+      case '/':
+        if (num2 === 0) {
+          return 'Error: Division by zero';
+        }
+        return num1 / num2;
+      default:
+        return 'Error: Invalid operator';
+    }
+  }
+  
+  // Usage examples:
+  console.log(calculator(5, 3, '+')); // Output: 8
+  console.log(calculator(10, 2, '-')); // Output: 8
+  console.log(calculator(4, 2, '*')); // Output: 8
+  console.log(calculator(10, 0, '/')); // Output: Error: Division by zero
+  console.log(calculator(5, 3, '%')); // Output: Error: Invalid operator
+  

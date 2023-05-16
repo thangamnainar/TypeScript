@@ -1,5 +1,5 @@
 const fs = require('fs') ;
-let filePath=process.argv[2];
+let filePath=process.argv[1];
 fs.readFile(filePath,(error,data)=>{
     if(error){
         console.log(error);
@@ -9,4 +9,4 @@ fs.readFile(filePath,(error,data)=>{
         console.log(str);
     };
 });
-// console.log('wertyuio');
+console.log('wertyuio');
