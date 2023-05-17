@@ -14,7 +14,19 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.Engine = void 0;
 var message = 'Hi.. welcome from tn';
 // console.log(message);
 var a = 123;
@@ -178,6 +190,7 @@ var Engine = /** @class */ (function () {
     }
     return Engine;
 }());
+exports.Engine = Engine;
 var Auto = /** @class */ (function () {
     function Auto(engine) {
         this.engine = engine;
@@ -210,7 +223,41 @@ var ccar = /** @class */ (function () {
     };
     return ccar;
 }());
-var ob = new ccar('benz');
-ob.start('started');
-ob.stop('stop');
-ob.getval();
+// var ob = new ccar('benz');
+// ob.start('started')
+// ob.stop('stop')
+// ob.getval()
+var deparment;
+(function (deparment) {
+    deparment[deparment["mech"] = 0] = "mech";
+    deparment[deparment["bca"] = 1] = "bca";
+    deparment[deparment["eee"] = 2] = "eee";
+    deparment[deparment["it"] = 3] = "it";
+})(deparment || (deparment = {}));
+;
+// console.log(deparment.it);
+var myfun = function (obj) {
+    return __assign(__assign({}, obj), { hi: 'hii' });
+};
+a = {
+    name: 'siva',
+    age: 20
+};
+var ob = myfun(a);
+// console.log(ob.name);
+var myfun2 = function (obj) {
+    obj['message'] = 'hiii';
+    return obj;
+};
+// console.log(myfun2(a));
+// console.log(a);
+// genric.........
+var myfun11 = function (obj) {
+    return __assign(__assign({}, obj), { hi: 'hii' });
+};
+a = {
+    name: 'siva',
+    age: 20
+};
+var ob1 = myfun11(a);
+console.log(ob1.name);

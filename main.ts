@@ -189,7 +189,7 @@ class car4 {
 
 //...........
 
-class Engine {
+export class Engine {
   constructor(public power: number, public type: string) {
   }
 }
@@ -248,7 +248,48 @@ class ccar implements action {
   }
 }
 
-var ob = new ccar('benz');
-ob.start('started')
-ob.stop('stop')
-ob.getval()
+// var ob = new ccar('benz');
+// ob.start('started')
+// ob.stop('stop')
+// ob.getval()
+
+enum deparment {
+  mech, bca, eee, it
+};
+// console.log(deparment.it);
+
+let myfun = (obj: object) => {
+  return { ...obj, hi: 'hii' }
+
+};
+
+a = {
+  name: 'siva',
+  age: 20
+}
+let ob = myfun(a)
+// console.log(ob.name);
+
+
+let myfun2 = (obj: object) => {
+
+  obj['message'] = 'hiii'
+  return obj
+};
+
+// console.log(myfun2(a));
+// console.log(a);
+
+
+// genric.........
+
+let myfun11 = <T>(obj: T) => {
+  return { ...obj, hi: 'hii' };
+
+};
+a = {
+  name: 'siva',
+  age: 20
+}
+let ob1 = myfun11(a)
+console.log(ob1.name);
