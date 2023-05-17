@@ -193,10 +193,6 @@ var Truck = /** @class */ (function (_super) {
     }
     return Truck;
 }(Auto));
-var engine = new Engine(300, "ES6");
-var truk = new Truck(engine, true);
-console.log(truk.engine.power);
-console.log(truk.fourByFour);
 var ccar = /** @class */ (function () {
     function ccar(engine) {
         this.engine = engine;
@@ -205,10 +201,14 @@ var ccar = /** @class */ (function () {
     ccar.prototype.start = function (message) {
         console.log(this.engine + message);
     };
+    ccar.prototype.getval = function () {
+        console.log('somthing');
+    };
     ccar.prototype.stop = function (message) {
         console.log(this.engine + message);
     };
     return ccar;
 }());
 var ob = new ccar('benz');
-// ob.start('started')
+ob.start('started');
+ob.getval();

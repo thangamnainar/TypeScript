@@ -211,20 +211,25 @@ class Truck extends Auto{
 }
 
 
-let engine = new Engine(300,"ES6");
-let truk=new Truck(engine,true);
-console.log(truk.engine.power);
-console.log(truk.fourByFour);
+// let engine = new Engine(300,"ES6");
+// let truk=new Truck(engine,true);
+// console.log(truk.engine.power);
+// console.log(truk.fourByFour);
 
 
 // define interface..
 
-interface action{
+interface val{
+  getval();
+}
+
+interface action extends val{
   start(message:string);  
   stop(message:string);
 }
 
 class ccar implements action{
+      
   constructor(public engine:string){
     this.engine=engine;
   }
@@ -233,7 +238,10 @@ class ccar implements action{
     console.log(this.engine + message);
     
   }
-
+  getval() {
+    console.log('somthing');
+    
+  }
   stop(message: string) {
     console.log(this.engine + message);
     
@@ -241,4 +249,5 @@ class ccar implements action{
 }
 
 var ob=new ccar('benz');
-// ob.start('started')
+ob.start('started')
+ob.getval()
