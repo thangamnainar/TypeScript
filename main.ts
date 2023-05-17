@@ -157,7 +157,7 @@ class car3{
 
 
 class car4{
-  private _engine:string;
+     _engine:string;
   engine1:string;
 
   constructor(engine:string){
@@ -183,8 +183,8 @@ class car4{
 
 
 
-let ca4=new car4('jhklkj');
-console.log(ca4.engine);
+// let ca4=new car4('jhklkj');
+// console.log(ca4.engine);
 // ca4.engine='aaudi';
 
 //...........
@@ -195,8 +195,8 @@ class Engine{
 }
 
 class Auto{
-  engine:Engine;
-  constructor(engine){
+  engine;
+  constructor(engine:Engine){
     this.engine=engine;
   }
 }
@@ -211,15 +211,16 @@ class Truck extends Auto{
 }
 
 
-// let engine = new Engine(300,"ES6");
-// let truk=new Truck(engine,true);
-// console.log(truk.engine.power);
+let engine = new Engine(300,"ES6");
+let truk=new Truck(engine,true);
+console.log(truk.engine.power);
+console.log(truk.fourByFour);
 
 
 // define interface..
 
 interface action{
-  start(message:string);
+  start(message:string);  
   stop(message:string);
 }
 

@@ -167,8 +167,8 @@ var car4 = /** @class */ (function () {
     return car4;
 }());
 ;
-var ca4 = new car4('jhklkj');
-console.log(ca4.engine);
+// let ca4=new car4('jhklkj');
+// console.log(ca4.engine);
 // ca4.engine='aaudi';
 //...........
 var Engine = /** @class */ (function () {
@@ -193,6 +193,10 @@ var Truck = /** @class */ (function (_super) {
     }
     return Truck;
 }(Auto));
+var engine = new Engine(300, "ES6");
+var truk = new Truck(engine, true);
+console.log(truk.engine.power);
+console.log(truk.fourByFour);
 var ccar = /** @class */ (function () {
     function ccar(engine) {
         this.engine = engine;
