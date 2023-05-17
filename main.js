@@ -194,6 +194,7 @@ var Truck = /** @class */ (function (_super) {
     return Truck;
 }(Auto));
 var ccar = /** @class */ (function () {
+    // value:any;
     function ccar(engine) {
         this.engine = engine;
         this.engine = engine;
@@ -211,4 +212,5 @@ var ccar = /** @class */ (function () {
 }());
 var ob = new ccar('benz');
 ob.start('started');
+ob.stop('stop');
 ob.getval();
