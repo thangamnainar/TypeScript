@@ -297,7 +297,7 @@ let ob1 = myfun11(a)
 let a1=[1,2,3,'z'];
 let b1=['a','b'];
 
-// generics.....................................................................................................................
+// generics....................................................................................................................
 
 function identity<T>(arg: T):T[]{
   return [arg];
@@ -320,14 +320,16 @@ const myfun12: MyFunction<string> = (obj) => {
 };
 console.log(myfun12('kjh'));
 
-// interface MyFunction<T> {
-//   (obj: T): { [key: string]: number };
-// }
+//.......................
 
-// const myfun13: MyFunction<string> = (obj) => {
-//   return { key: parseInt(obj) };
-// };
+interface MyFun<T> {
+  (obj: T): { key: string,value: number };
+}
 
-// console.log(myfun13('123'));
+const myfun13: MyFun<string> = (obj) => {
+  return { key:'wfes', value:parseInt(obj) };
+};
+
+console.log(myfun13('123'));
 
 

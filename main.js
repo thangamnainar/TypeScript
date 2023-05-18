@@ -263,7 +263,7 @@ var ob1 = myfun11(a);
 // console.log(ob1.name);
 var a1 = [1, 2, 3, 'z'];
 var b1 = ['a', 'b'];
-// generics.....................................................................................................................
+// generics....................................................................................................................
 function identity(arg) {
     return [arg];
 }
@@ -277,10 +277,7 @@ var myfun12 = function (obj) {
     return { key: obj };
 };
 console.log(myfun12('kjh'));
-// interface MyFunction<T> {
-//   (obj: T): { [key: string]: number };
-// }
-// const myfun13: MyFunction<string> = (obj) => {
-//   return { key: parseInt(obj) };
-// };
-// console.log(myfun13('123'));
+var myfun13 = function (obj) {
+    return { key: 'wfes', value: parseInt(obj) };
+};
+console.log(myfun13('123'));
