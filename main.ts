@@ -292,4 +292,42 @@ a = {
   age: 20
 }
 let ob1 = myfun11(a)
-console.log(ob1.name);
+// console.log(ob1.name);
+
+let a1=[1,2,3,'z'];
+let b1=['a','b'];
+
+// generics.....................................................................................................................
+
+function identity<T>(arg: T):T[]{
+  return [arg];
+}
+const result = identity<string>('rrtyuio');
+// console.log(result); // Output: Hello
+
+
+let myfun1=<T extends (string|number)>(obj:T) :T[]=>{
+  return [obj]
+}
+console.log(myfun1('kjh'));
+
+// object
+interface MyFunction<T> {
+  (obj: T): {key:T};
+}
+const myfun12: MyFunction<string> = (obj) => {
+  return {key:obj};
+};
+console.log(myfun12('kjh'));
+
+// interface MyFunction<T> {
+//   (obj: T): { [key: string]: number };
+// }
+
+// const myfun13: MyFunction<string> = (obj) => {
+//   return { key: parseInt(obj) };
+// };
+
+// console.log(myfun13('123'));
+
+

@@ -260,4 +260,27 @@ a = {
     age: 20
 };
 var ob1 = myfun11(a);
-console.log(ob1.name);
+// console.log(ob1.name);
+var a1 = [1, 2, 3, 'z'];
+var b1 = ['a', 'b'];
+// generics.....................................................................................................................
+function identity(arg) {
+    return [arg];
+}
+var result = identity('rrtyuio');
+// console.log(result); // Output: Hello
+var myfun1 = function (obj) {
+    return [obj];
+};
+console.log(myfun1('kjh'));
+var myfun12 = function (obj) {
+    return { key: obj };
+};
+console.log(myfun12('kjh'));
+// interface MyFunction<T> {
+//   (obj: T): { [key: string]: number };
+// }
+// const myfun13: MyFunction<string> = (obj) => {
+//   return { key: parseInt(obj) };
+// };
+// console.log(myfun13('123'));
